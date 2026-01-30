@@ -67,8 +67,10 @@ def run_migrations_online() -> None:
     # Get the configuration dictionary from alembic.ini
     config_section = config.get_section(config.config_ini_section)
 
-    db_url = os.getenv("DATABASE_URL")
+    from app.core.config import settings
 
+    db_url = settings.DATABASE_URL
+    
     # Manually set the 'sqlalchemy.url' key in our config dictionary
     config_section["sqlalchemy.url"] = db_url
 
