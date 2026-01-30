@@ -26,7 +26,7 @@ A robust FastAPI application for managing movies and reviews, featuring secure a
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd FastAPI-webapp
+cd Movie-Review-API
 
 # Create virtual environment
 python3 -m venv venv
