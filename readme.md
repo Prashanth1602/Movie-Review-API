@@ -19,6 +19,47 @@ A robust FastAPI application for managing movies and reviews, featuring secure a
 
 ## Setup
 
+### Using Docker (Recomended)
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd Movie-Review-API
+    ```
+
+2.  **Configuration:**
+    Create a `.env` file in the root directory:
+    ```env
+    DATABASE_URL=postgresql://postgres:prashanth@db:5432/moviedb
+    SECRET_KEY=your_super_secret_key
+    ALGORITHM=HS256
+    ACCESS_TOKEN_EXPIRE_MINUTES=30
+    REFRESH_TOKEN_EXPIRE_DAYS=7
+    FIRST_SUPERUSER=admin@example.com
+    FIRST_SUPERUSER_PASSWORD=admin123
+    EXTERNAL_API_KEY=your_secure_random_string_here
+    
+    # Postgres Container Variables
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=prashanth
+    POSTGRES_DB=moviedb
+    ```
+
+3.  **Run with Docker Compose:**
+    ```bash
+    docker-compose up --build
+    ```
+    This will start the API, Database, and Redis.
+
+4.  **Access:**
+    -   API: `http://localhost:8000`
+    -   Docs: `http://localhost:8000/docs`
+    -   Database (External): `localhost:5434`
+
+---
+
+### Local Setup (Manual)
+
 ### 1. Prerequisites
 *   Python 3.10+
 *   PostgreSQL running locally
