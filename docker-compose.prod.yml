@@ -1,8 +1,4 @@
 services:
   web:
-    command: >
-      bash -c "python -m app.pre_start &&
-               alembic upgrade head &&
-               exec \"$@\""
     ports:
       - "8000:8000"
