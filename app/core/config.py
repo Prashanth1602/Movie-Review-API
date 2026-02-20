@@ -11,5 +11,6 @@ class Settings:
     REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS"))
     FIRST_SUPERUSER: str = os.getenv("FIRST_SUPERUSER")
     FIRST_SUPERUSER_PASSWORD: str = os.getenv("FIRST_SUPERUSER_PASSWORD")
+    GOOGLE_CLIENT_ID: str | None = os.getenv("GOOGLE_CLIENT_ID")
 
 settings = Settings()

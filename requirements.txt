@@ -13,3 +13,5 @@ alembic==1.11.1
 pytest==7.4.2
 redis==5.0.1
 tenacity
+google-auth
+requests

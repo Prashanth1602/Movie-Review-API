@@ -33,3 +33,6 @@ class TokenResponse(BaseModel):
 
 class TokenRequest(BaseModel):
     refresh_token: str
+
+class GoogleToken(BaseModel):
+    token: str

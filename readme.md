@@ -3,7 +3,7 @@
 A robust FastAPI application for managing movies and reviews, featuring secure authentication and vector-based search.
 
 ## Features
-*   **Authentication**: Secure User Registration & Login (JWT Access + Refresh Tokens).
+*   **Authentication**: Secure User Registration & Login (JWT Access + Refresh Tokens) + Google OAuth 2.0 (ID Token flow).
 *   **Role-Based Access**: Admin role for managing movies.
 *   **Movies**: Create, Read, Update, Delete (CRUD) with vector search support.
 *   **Reviews**: Users can rate and review movies.
@@ -38,8 +38,7 @@ A robust FastAPI application for managing movies and reviews, featuring secure a
     FIRST_SUPERUSER=admin@example.com
     FIRST_SUPERUSER_PASSWORD=admin123
     EXTERNAL_API_KEY=your_secure_random_string_here
-    
-    # Postgres Container Variables
+    GOOGLE_CLIENT_ID=your_google_client_id_here
     POSTGRES_USER=postgres
     POSTGRES_PASSWORD=prashanth
     POSTGRES_DB=moviedb
@@ -89,6 +88,7 @@ REFRESH_TOKEN_EXPIRE_DAYS=7
 FIRST_SUPERUSER=admin@example.com
 FIRST_SUPERUSER_PASSWORD=admin123
 EXTERNAL_API_KEY=your_secure_random_string_here
+GOOGLE_CLIENT_ID=your_google_client_id_here
 ```
 
 ### 4. Database Setup

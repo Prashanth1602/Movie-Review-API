@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordRequestForm
 from app.models.auth import User
-from app.schemas.auth import UserCreate, UserOut, Token, TokenRequest, TokenResponse
+from app.schemas.auth import UserCreate, UserOut, Token, TokenRequest, TokenResponse, GoogleToken
 from app.core.database import get_db
 from app.api.deps import get_current_user
 from app.services.auth import AuthService
@@ -25,3 +25,7 @@ def refresh_token_endpoint(request: TokenRequest, db: Session = Depends(get_db))
 @router.post("/auth/logout")
 def logout_user(request: TokenRequest, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     return auth_service.logout(db, request.refresh_token)
+
+@router.post("/google", response_model=Token)
+def google_auth(token_data: GoogleToken, db: Session = Depends(get_db)):
+    return auth_service.google_login(db, token_data.token)
