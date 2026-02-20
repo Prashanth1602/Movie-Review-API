@@ -3,9 +3,6 @@ services:
     command: >
       bash -c "python -m app.pre_start &&
                alembic upgrade head &&
-               exec gunicorn app.main:app
-               --worker-class uvicorn.workers.UvicornWorker
-               --bind 0.0.0.0:8000
-               --workers 3"
+               exec \"$@\""
     ports:
       - "8000:8000"
