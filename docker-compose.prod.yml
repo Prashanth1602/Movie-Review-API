@@ -4,7 +4,7 @@ services:
       sh -c "python -m app.pre_start &&
              alembic upgrade head &&
              gunicorn app.main:app
-             -k uvicorn.workers.UvicornWorker
+             --worker-class uvicorn.workers.UvicornWorker
              --bind 0.0.0.0:8000
              --workers 3"
     ports:
